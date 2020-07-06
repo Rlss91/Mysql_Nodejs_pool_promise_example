@@ -11,5 +11,13 @@ let selectClient = (id) => {
   );
 };
 
+let newClient = (name, addr) => {
+  return mysql.execute(
+    "INSERT INTO exampleclass.clients(name,address) VALUES (?,?);",
+    [name, addr]
+  );
+};
+
 module.exports.selectAll = selectAll;
 module.exports.selectClient = selectClient;
+module.exports.newClient = newClient;
